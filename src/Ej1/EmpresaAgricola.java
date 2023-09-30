@@ -1,3 +1,4 @@
+package Ej1;
 import java.util.ArrayList;
 
 public class EmpresaAgricola {
@@ -28,7 +29,7 @@ public class EmpresaAgricola {
                 agroquimicosAdecuados.add(a);
             }
         }
-        return agroquimicosAdecuados
+        return agroquimicosAdecuados;
     }
 
     public ArrayList<Agroquimico> AgroquimicosSegunCultivosYEnfermedad(Cultivo unCultivo, Enfermedad unaEnfermedad){

@@ -1,3 +1,4 @@
+package Ej1;
 import java.util.ArrayList;
 
 public class Agroquimico {
@@ -51,7 +52,7 @@ public class Agroquimico {
             i++;
         }
         if (!existe){
-            cultivosNoRecomendados.add(unEstadoPatologico);
+            estadosPatologicosQueTrata.add(unEstadoPatologico);
         }
     }
 
