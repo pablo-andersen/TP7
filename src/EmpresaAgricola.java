@@ -21,6 +21,23 @@ public class EmpresaAgricola {
         return new ArrayList<Agroquimico>(productosQuimicos);
     }
 
+    public ArrayList<Agroquimico> AgroquimicosSegunEnfermedad(Enfermedad unaEnfermedad){
+        ArrayList<Agroquimico> agroquimicosAdecuados = new ArrayList<Agroquimico>();
+        for (Agroquimico a: productosQuimicos){
+            if (unaEnfermedad.esTratadaPor(a)) {
+                agroquimicosAdecuados.add(a);
+            }
+        }
+        return agroquimicosAdecuados
+    }
 
-    
+    public ArrayList<Agroquimico> AgroquimicosSegunCultivosYEnfermedad(Cultivo unCultivo, Enfermedad unaEnfermedad){
+        ArrayList<Agroquimico> agroquimicosAdecuados = new ArrayList<Agroquimico>();
+        for (Agroquimico a: productosQuimicos){
+            if (unCultivo.esDeUtilidad(a) && unaEnfermedad.esTratadaPor(a)) {
+                agroquimicosAdecuados.add(a);
+            }
+        }
+        return agroquimicosAdecuados;
+    }
 }

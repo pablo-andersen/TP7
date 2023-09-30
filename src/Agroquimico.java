@@ -63,7 +63,16 @@ public class Agroquimico {
         }
         return false;
     }
-    
+
+    public boolean soyNoRecomendado(String unCultivo){
+        for (Cultivo c : cultivosNoRecomendados){
+            if(c.getNombre().equalsIgnoreCase(unCultivo)){
+                return true;
+            }
+        }
+        return false;
+    } 
+
 }
 
 

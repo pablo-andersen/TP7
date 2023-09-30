@@ -37,6 +37,7 @@ public class Cultivo {
     enfermedades frecuentes y no se desaconseja su uso en el cultivo. Se considera que el
     agroquímico trata una enfermedad si todos los estados patológicos de la enfermedad están
     contenidos por las acciones del producto químico.*/
+
     public boolean esDeUtilidad(Agroquimico unAgroquimico){
         boolean esUtil = false;
         if(trataEnfermedades(unAgroquimico) && !esContraproducente(unAgroquimico)){
@@ -47,15 +48,15 @@ public class Cultivo {
 
     public boolean trataEnfermedades(Agroquimico unAgroquimico){
         for (Enfermedad e : enfermedadesFrecuentes){
-            if (!e.esTratadaPor(unAgroquimico)){
-                return false;
+            if (e.esTratadaPor(unAgroquimico)){
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
-    public boolean esContraproducente(){
-
+    public boolean esContraproducente(Agroquimico unAgroquimico){
+     return unAgroquimico.soyNoRecomendado(getNombre());
     }
 
 }
